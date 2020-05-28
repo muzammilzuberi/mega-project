@@ -1,0 +1,149 @@
+#include<iostream>
+#include<fstream>
+using namespace std;
+
+bool CheckAuthorized(string alogin_id,char pass[])
+{
+    string pass1,login_id;
+    ifstream fin;
+    fin.open("Authorize_Person.txt",ios::in);
+    fin>>login_id>>pass1;
+    while(!fin.eof())
+    {
+        if(alogin_id==login_id)
+        {
+            if(pass==pass1)
+            {
+                fin.close();
+                return true;
+            }
+        }
+        fin>>login_id>>pass1;
+    }
+    fin.close();
+    delete[] password;
+    return false;
+}
+
+void changepass()
+{
+    int i=0,flag=0;
+    char pass[20],pass1[20];
+    string alogin_id;
+    fstream fin, f1;
+    againold:
+    i=0;
+    cout<<"\nEnter the old password: ";
+    while(1)
+    {
+        pass[i] = getch();
+        if(pass[i]=='\r')
+        {
+            pass[i] = '\0';
+            break;
+        }
+        else if(pass[i]=='\b')
+        {
+            if(i>0)
+            {
+                i--;
+                cout<<"\b \b";
+            }
+        }
+        else
+        {
+            cout<<"*";
+                i++;
+        }
+    }
+    fin.open("Authorize_Person.txt",ios::in);
+    f1.open("Temp_Password.txt",ios::out);
+    fin>>alogin_id>>pass1;
+    while(!fin.eof())
+    {
+        if(alogin_id==login_id)
+        {
+            if(strcmp(pass,pass1)==0)
+            {
+                flag=1;
+                againpass:
+                i=0;
+                cout<<"\nEnter the new password: ";
+                while(1)
+                {
+                    pass[i] = getch();
+                    if(pass[i]=='\r')
+                    {
+                        pass[i] = '\0';
+                        break;
+                    }
+                    else if(pass[i]=='\b')
+                    {
+                        if(i>0)
+                        {
+                            i--;
+                            cout<<"\b \b";
+                        }
+                    }
+                    else
+                    {
+                        cout<<"*";
+                        i++;
+                    }
+                }
+                i=0;
+                cout<<"\nRenter the new password: ";
+                while(1)
+                {
+                    pass1[i] = getch();
+                    if(pass1[i]=='\r')
+                    {
+                        pass1[i] = '\0';
+                        break;
+                    }
+                    else if(pass1[i]=='\b')
+                    {
+                        if(i>0)
+                        {
+                            i--;
+                            cout<<"\b \b";
+                        }
+                    }
+                    else
+                    {
+                        cout<<"*";
+                        i++;
+                    }
+                }
+                if(strcmp(pass,pass1)!=0)
+                {
+                    cout<<"\nPassword not match!";
+                    Sleep(2000);
+                    system("cls");
+                    goto againpass;
+                }
+                else
+                {
+                    f1<<alogin_id<<"\t"<<pass1<<"\n";
+                }
+            }
+        }
+        else
+        {
+            f1<<alogin_id<<"\t"<<pass1<<"\n";
+        }
+        fin>>alogin_id>>pass1;
+    }
+    if(flag==0)
+    {
+        cout<<"\nWrong Old Password!";
+        fin.close();
+        f1.close();
+        goto againold;
+    }
+    fin.close();
+    f1.close();
+    remove("Authorize_Person.txt");
+    rename("Temp_Password.txt", "Authorize_Person.txt");
+}
+
