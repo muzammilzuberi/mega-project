@@ -1,0 +1,13 @@
+
+Diamond_Marquee	1
+Gold_Marquee	2
+Platinum_Marquee	15
+Vip_BanquetHall	16
+PrivateClub	15
+Resort	4
+Cruise	15
+Outdoor_Lawn	15
+Conference_Hall	5
+Farm_House	15
+Rooftop	5
+Meeting_Room	2

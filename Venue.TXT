@@ -1,0 +1,13 @@
+
+Diamond_Marquee	100
+Gold_Marquee	200
+Platinum_Marquee	1500
+Vip_BanquetHall	160
+PrivateClub	150
+Resort	4253637
+Cruise	150
+Outdoor_Lawn	150
+Conference_Hall	50
+Farm_House	1500
+Rooftop	1500
+Meeting_Room	200
