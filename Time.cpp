@@ -2,41 +2,70 @@
 #include<ctime>
 #include<time.h>
 using namespace std;
+class date
+{
+	int day;
+	int month;
+	int year;
 
-string currentTime()
+public:
+int get_year()
 {
-    time_t now = time(0);
-    struct tm  tstruct;
-    char buf[6];
-    tstruct = *localtime(&now);
-    strftime(buf, sizeof(buf), "%H:%M", &tstruct);
-    cout<<buf;
-    return buf;
+ time_t now = time(0);
+ tm *ltm = localtime(&now);
+ int y;
+ y=1900 + ltm->tm_year;	
+ this->year=y;	
+ return year;
 }
-string currentDate()
+	
+int get_month()	
 {
-    time_t now = time(0);
-    struct tm  tstruct;
-    char buf[20];
-    tstruct = *localtime(&now);
-    strftime(buf, sizeof(buf), "%Y/%m/%d", &tstruct);
-    cout<<buf;
-   return buf;
+ time_t now = time(0);
+ tm *ltm = localtime(&now);
+ int m;
+ m=1 + ltm->tm_mon;	
+ this->month=m;	
+ return month;	
 }
+
+int get_day()	
+{
+ time_t now = time(0);
+ tm *ltm = localtime(&now);
+ int d;
+ d=ltm->tm_mday;	
+ this->day=d;	
+ return day;
+}
+};
+	
+//string currentTime()
+//{
+//    time_t now = time(0);
+//    struct tm  tstruct;
+//    char buf[6];
+//    tstruct = *localtime(&now);
+//    strftime(buf, sizeof(buf), "%H:%M", &tstruct);
+//    cout<<buf;
+//    return buf;
+//}
+
+
 
 int main()
 {
 
-//        time_t curr_time;
-//        curr_time = time(NULL);
-//
-//        char *tm = ctime(&curr_time);
-//        cout << "Today is : " << tm;
-//
-//        return 0;
-    
-    currentTime();
-    cout<<endl;
-    currentDate();
-    cout<<endl;
+int y,m,d;
+date date;
+m=date.get_month();
+d=date.get_day();
+y=date.get_year();
+cout<<y<<"/"<<m<<"/"<<d;
 }
+
+
+
+
+
+
