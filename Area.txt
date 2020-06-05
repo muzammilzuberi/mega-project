@@ -1,0 +1,12 @@
+Club Road	2.4
+Defence/Clifton	1.8
+Shahrah-e-Faisal	1.6
+NHS	2
+Karsaaz/Airport	1.6
+P.E.C.H.S	1.4
+Bahadurabad/Tariq Road	1.5
+Next to Continental	1.2
+Gulistan-e-Johar	1.2
+Gulshan-e-Iqbal	1.3
+North Nazimabad/Bufferzone	1
+Korangi	0.8

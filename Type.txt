@@ -1,0 +1,8 @@
+Diamond Marquee	100000	600
+Platinium Marquee	90000	500
+Gold Marquee	80000	550VIP Banquet Hall	900000	600
+Banquet Hall	700000	500
+Auditorium	60000	200
+Private Club/Resort/FarmHouse	50000	300
+Outdoor Lawn	60000	350
+Conference Hall/Meeting Room	1000	200
