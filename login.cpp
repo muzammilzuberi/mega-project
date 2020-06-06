@@ -78,7 +78,7 @@ class NewUser:public Login
 	void input_user()
 	{
 		cout<<"Please Enter your full name: \n";
-		cin>>name;
+		getline(cin,name);
 		
 		cin.ignore();
 		
@@ -93,6 +93,7 @@ class NewUser:public Login
 		cin>>gender;
 		cout<<"CNIC:  \n";
 		cin>>cnic;
+
 		cout<<"\nCellphone : \n+92";
 		cin>>cellphone;
 		adduser();		
